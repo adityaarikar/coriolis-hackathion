@@ -1,0 +1,27 @@
+api_user Table:
+-----------
+user_id (Primary Key, AutoField)
+email (Unique, CharField with max length 50)
+emp_id (CharField with max length 10, blank)
+first_name (CharField with max length 20)
+last_name (CharField with max length 20)
+date_of_joining (DateField, blank)
+is_admin (BooleanField with default False)
+
+api_category Table:
+---------------
+cat_id (Primary Key, AutoField)
+name (Unique, CharField with max length 20)
+created_by_id (Foreign Key to api_user table, related name: created_by)
+created_at (DateField with auto_now)
+
+api_inventory Table:
+----------------
+invent_id (Primary Key, AutoField)
+cat_id_id (Foreign Key to api_category table, related name: category)
+alloted_at (DateField)
+alloted_to_id (Foreign Key to api_user table, related name: alloted_to)
+alloted_by_id (Foreign Key to api_user table, related name: alloted_by)
+alloted_till (DateField)
+working_status (BooleanField with default True)
+location (CharField with max length 50)

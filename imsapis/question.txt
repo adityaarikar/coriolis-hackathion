@@ -1,0 +1,12 @@
+List of employes who has chair?====>
+SELECT u.first_name, u.last_name
+FROM api_user u
+JOIN api_inventories i ON u.user_id = i.alloted_to_id
+JOIN api_category c ON i.cat_id_id = c.cat_id
+WHERE c.name = 'chair'
+
+
+Select * from inventory?====>
+SELECT * FROM api_inventories;
+
+
